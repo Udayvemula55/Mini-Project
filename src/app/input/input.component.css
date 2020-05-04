@@ -1,0 +1,68 @@
+.form-control:not(:focus):not(:disabled):hover {
+  color: #000000;
+
+  border: 1px solid #0051dc;
+}
+
+.form-control[disabled] {
+  color: #666666;
+
+  border: 1px dashed #616188;
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid {
+  color: #000000;
+
+  background-image: none;
+  border-color: #28861d;
+}
+
+label {
+  color: #373737;
+}
+
+.text-align-right {
+  text-align: end;
+}
+
+.input-error-msg {
+  color: #b8002c;
+}
+
+.input-error-msg label {
+  margin: 4px 0 0 4px;
+
+  color: #b8002c;
+}
+
+.form-control.is-valid:hover:not(:focus) {
+  border: 1px, solid, #28861d !important;
+}
+
+.form-control.is-valid:focus {
+  border: 1px solid #28861d !important;
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+  color: #000000;
+
+  background-image: none;
+  border: 1px solid #b8002c;
+}
+
+.form-control.is-invalid:hover:not(:focus) {
+  border: 1px solid #b8002c !important;
+}
+
+.form-control.is-invalid:focus {
+  border: 1px solid #b8002c !important;
+}
+
+.form-control.optional {
+  color: #767676;
+
+  background: #ffffff;
+  border: 1px solid #616188;
+}

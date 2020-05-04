@@ -1,0 +1,77 @@
+<div
+  class="tab-pane fade show"
+  id="profile"
+  role="tabpanel"
+  aria-labelledby="profile-tab"
+>
+  <h3 class="register-heading">Transaction</h3>
+  <form [formGroup]="transactionFrom">
+    <div class="row register-form col-md-12">
+      <div class="col-md-6">
+        <div class="form-group">
+          <select
+            class="form-control"
+            [formControl]="transactionFrom.controls['merchant']"
+          >
+            <option
+              class="hidden"
+              selected
+              disabled
+            >
+              Please select Mechant
+            </option>
+            <option>Merchant</option>
+            <option>Payer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select
+            class="form-control"
+            [formControl]="transactionFrom.controls['payer']"
+          >
+            <option
+              class="hidden"
+              selected
+              disabled
+            >
+              Please select Currency
+            </option>
+            <option>USD</option>
+            <option>GBR</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <select
+            class="form-control"
+            [formControl]="transactionFrom.controls['currency']"
+          >
+            <option
+              *ngFor="let cur of currency;"
+              [value]="cur"
+            >
+              {{cur}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            [formControl]="transactionFrom.controls['amount']"
+            class="form-control"
+            placeholder="Amount *"
+            value
+          >
+        </div>
+        <input
+          type="button"
+          class="btnRegister"
+          (click)="submitTransaction()"
+          [class.disabled]="transactionFrom.invalid"
+          value="submit"
+        >
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,72 @@
+<div class="container-fluide dashboard-div">
+  <div class="pull-right">
+    <div style="margin-bottom: 2%;">
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          class="form-control col-md-2 search-input"
+          placeholder="Search"
+          value
+        >
+      </div>
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Basic example"
+      >
+        <button
+          type="button"
+          [routerLink]="['/register']"
+          class="btn btn-secondary dashboard-btn"
+        >
+          Registration
+        </button>
+        <button
+          type="button"
+          [routerLink]="['/transaction']"
+          class="btn btn-secondary dashboard-btn"
+        >
+          Transaction
+        </button>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Currency</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let payment of payments | filter:searchText;let i = index;"
+        (click)="openModalDialog(payment)"
+      >
+        <th scope="row">{{i + 1}}</th>
+        <td>{{payment.name}}</td>
+        <td>{{payment.currency }}</td>
+        <td>
+          {{payment.amount | currency: payment.currency :'symbol'}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Modal popup -->
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':display}"
+>
+  <app-payment-details
+    *ngIf="selectedPayment"
+    (closeModal)="closeModalDialog()"
+    [selectedPayment]="selectedPayment"
+  >
+  </app-payment-details>
+</div>

@@ -1,0 +1,53 @@
+<!-- modal -->
+<!-- modal-dialog -->
+<div class="modal-dialog" role="document">
+  <!-- modal-content -->
+  <div class="modal-content">
+    <!-- modal-header -->
+    <div class="modal-header">
+      Transaction #ID:
+      <button type="button" class="close" aria-label="Close" (click)="closeModalDialog($event)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- modal-body -->
+    <div class="modal-body">
+      <table class="table table-stripped">
+        <tbody>
+          <tr>
+            <th class="small text-muted pr-2" scope="row">
+              Mechant #ID:
+            </th>
+            <td>{{selectedPayment?.name}}</td>
+          </tr>
+          <tr>
+            <th class="small text-muted pr-2" scope="row">
+              Merchant Name:
+            </th>
+            <td>{{selectedPayment?.name}}</td>
+          </tr>
+          <tr>
+            <th class="small text-muted pr-2" scope="row">
+              Amount:
+            </th>
+            <td>
+              {{selectedPayment?.amount | currency: selectedPayment?.currency :'symbol'}}
+            </td>
+          </tr>
+          <tr>
+            <th class="small text-muted pr-2" scope="row">
+              Currency:
+            </th>
+            <td>{{selectedPayment?.currency }}</td>
+          </tr>
+          <tr>
+            <th class="small text-muted pr-2" scope="row">
+              Account Number:
+            </th>
+            <td>{{selectedPayment.accountNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

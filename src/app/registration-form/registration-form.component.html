@@ -1,0 +1,76 @@
+<div
+  class="tab-pane fade show"
+  id="home"
+  role="tabpanel"
+  aria-labelledby="home-tab"
+>
+  <h3 class="register-heading">Registration</h3>
+  <form [formGroup]="registrationForm">
+    <div class="row register-form col-md-12">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input
+            type="text"
+            [formControl]="registrationForm.controls['firstName']"
+            class="form-control"
+            placeholder="First Name *"
+            value
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            [formControl]="registrationForm.controls['lastName']"
+            class="form-control"
+            placeholder="Last Name *"
+            value
+          >
+        </div>
+        <div class="form-group">
+          <select
+            class="form-control"
+            [formControl]="registrationForm.controls['type']"
+          >
+            <option
+              class="hidden"
+              selected
+              disabled
+            >
+              Please select Type
+            </option>
+            <option>Merchant</option>
+            <option>Payer</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input
+            type="number"
+            [formControl]="registrationForm.controls['accountNumber']"
+            class="form-control"
+            placeholder="A/C Number *"
+            value
+          >
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            [formControl]="registrationForm.controls['country']"
+            class="form-control"
+            placeholder="Country *"
+            value
+          >
+        </div>
+        <input
+          type="button"
+          [class.disabled]="registrationForm.invalid"
+          (click)="submitRegistration()"
+          class="btnRegister"
+          value="Register"
+        >
+      </div>
+    </div>
+  </form>
+</div>

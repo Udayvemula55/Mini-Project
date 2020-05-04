@@ -1,0 +1,42 @@
+.collapse:not(.show) {
+    display: none;
+}
+
+.dashboard-div {
+    /* background: -webkit-linear-gradient(left, #e9e8f3, #8cc5d6); */
+    background-color: #ffffff;
+    padding: 25px;
+}
+
+.table {
+    border-radius: 5px;
+    border-collapse: unset;
+}
+
+.dashboard-btn {
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    /* background: #f8f9fa; */
+    font-weight: bold;
+    /* color: #383d41; */
+    float: right;
+    cursor: pointer;
+    padding: 5px 30px;
+}
+
+.search-input {
+    float: right;
+    border-radius: 20px;
+    margin-left: 10px;
+    line-height: 1.1;
+}
+
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}

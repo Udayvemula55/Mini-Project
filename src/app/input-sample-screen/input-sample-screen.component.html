@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <section class="main_container">
+        <form
+          [formGroup]="inputSampleForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <app-input
+            id="username"
+            label="User Name (Normal)"
+            type="text"
+            labelClass="text-grey"
+            inputClass
+            [defaultValue]="'Hello'"
+            (inputFormControlEmitter)="setInputFormControlHandler($event)"
+            [isLabelRequired]="true"
+            [isValidationStyleRequired]="false"
+          ></app-input>
+          <app-input
+            id="orgname"
+            label="Company Name (Validator)"
+            type="text"
+            labelClass="text-grey"
+            [defaultValue]="'POC'"
+            (inputFormControlEmitter)="setInputFormControlHandler($event)"
+            [isLabelRequired]="true"
+            [validators]="SAMPLE_VALIDATORS"
+            [isValidationStyleRequired]="true"
+          ></app-input>
+          <app-input
+            id="userid"
+            label="User Id (Disabled)"
+            type="text"
+            labelClass="text-grey"
+            inputClass
+            (inputFormControlEmitter)="setInputFormControlHandler($event)"
+            [isLabelRequired]="true"
+            [isDisabled]="true"
+            [isValidationStyleRequired]="false"
+          ></app-input>
+
+          <app-input
+            id="textvalid"
+            label="Text (Valid)"
+            type="text"
+            labelClass="text-grey"
+            inputClass="is-valid"
+            (inputFormControlEmitter)="setInputFormControlHandler($event)"
+            [isLabelRequired]="true"
+            [isValidationStyleRequired]="true"
+          ></app-input>
+
+          <app-input
+            id="textoptional"
+            label="Text (optional)"
+            type="text"
+            labelClass="text-grey"
+            inputClass="optional"
+            (inputFormControlEmitter)="setInputFormControlHandler($event)"
+            [isLabelRequired]="true"
+            [isValidationStyleRequired]="false"
+          >
+          </app-input>
+          <app-input
+            id="pincode"
+            label="Password"
+            type="password"
+            labelClass="text-grey"
+            (inputFormControlEmitter)="setInputFormControlHandler($event)"
+            [isLabelRequired]="true"
+            [isValidationStyleRequired]="false"
+          >
+          </app-input>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

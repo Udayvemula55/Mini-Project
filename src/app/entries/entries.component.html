@@ -1,0 +1,67 @@
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <h3>Welcome</h3>
+      <h3>Payments</h3>
+      <a
+        class="dashboard-lnk-btn"
+        [routerLink]="['/dashboard']"
+        href="javaScript:Void(0);"
+      >
+        Dashabord
+      </a>
+      <br>
+    </div>
+    <div class="col-md-9 register-right">
+      <ul
+        class="nav nav-tabs nav-justified"
+        id="myTab"
+        role="tablist"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [ngClass]="{'active': showRegFrom}"
+            id="home-tab"
+            data-toggle="tab"
+            href="#home"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true"
+            (click)="toggleForm()"
+          >
+            Registration
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [ngClass]="{'active': !showRegFrom}"
+            id="profile-tab"
+            data-toggle="tab"
+            href="#profile"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false"
+            (click)="toggleForm()"
+          >
+            Transition
+          </a>
+        </li>
+      </ul>
+      <div
+        class="tab-content"
+        id="myTabContent"
+      >
+        <!-- 1st Form -->
+        <div *ngIf="showRegFrom">
+          <app-registration-form></app-registration-form>
+        </div>
+        <!-- 2nd Form -->
+        <div *ngIf="!showRegFrom">
+          <app-transaction-form></app-transaction-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

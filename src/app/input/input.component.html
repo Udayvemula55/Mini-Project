@@ -1,0 +1,35 @@
+<div class="form-group">
+  <div class="row">
+    <div class="col-8" *ngIf="isLabelRequired">
+      <label
+        [for]="id"
+        [class]="labelClass"
+      >
+        {{label}}
+      </label>
+    </div>
+    <div
+      *ngIf="inputClass === 'optional'"
+      class="col-4 text-align-right"
+    >
+      Optional
+    </div>
+  </div>
+
+  <input
+    [type]="type"
+    [id]="id"
+    [name]="id"
+    class="form-control {{inputClass}}"
+    [placeholder]="inputPlaceholder"
+    [formControl]="inputFormControl"
+  >
+  <div
+    class="row"
+    *ngIf="this.inputFormControl?.invalid"
+  >
+    <div class="col input-error-msg">
+      <label>{{errorMessage}}</label>
+    </div>
+  </div>
+</div>
