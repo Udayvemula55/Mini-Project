@@ -3,7 +3,6 @@
 }
 
 .dashboard-div {
-    /* background: -webkit-linear-gradient(left, #e9e8f3, #8cc5d6); */
     background-color: #ffffff;
     padding: 25px;
 }
@@ -17,9 +16,7 @@
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
-    /* background: #f8f9fa; */
     font-weight: bold;
-    /* color: #383d41; */
     float: right;
     cursor: pointer;
     padding: 5px 30px;
